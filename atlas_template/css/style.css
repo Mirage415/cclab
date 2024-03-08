@@ -1,23 +1,76 @@
 body{
-    background-color:rgb(0, 0, 0);
+    background-color: black;
     color: aliceblue;
-    font-family:'Courier New', Courier, monospace;
-    font-size:1em;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+}   
+
+.yellow{
+    color: gold;
 }
 
-.gold{
-    color:gold;
-}
 .green{
-    color:green;
+    color: aquamarine;
 }
+
 .red{
-    color:red;
+    color: coral;
 }
 
 #title-wrapper{
-    border:white solid 2px;
-    text-align:center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-    font-size 2em;
+    /* border: white solid 2px; */
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2em ;
+}
+
+#main-wrapper{
+    /* border:white solid 2px; */
+    width: 800px;
+    position: relative;
+    margin: auto;
+
+}
+
+#p5-canvas-container img{
+    width: 800px;
+}
+
+.two-columns{
+    display: flex;
+}
+
+.left{
+    /* border:white solid 2px; */
+    width: 50%;
+    padding-right: 10px;
+}
+
+.right{
+    /* border:white solid 2px; */
+    width: 50%;
+    padding-left: 10px;
+}
+
+#footer{
+    text-align: center;
+    font-size: 0.7em;
+    margin-bottom: 50px;
+}
+
+#home a{
+
+    position: fixed;
+    top:10px;
+    right: 20px;
+    text-decoration: none;
+    border: dimgray solid 0.5px;
+    padding: 10px 20px;
+    color: dimgray;
+}
+
+#home a:hover{
+    background-color: yellow;
+    color: black;
+
 }
