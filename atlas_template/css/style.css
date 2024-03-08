@@ -1,0 +1,23 @@
+body{
+    background-color:rgb(0, 0, 0);
+    color: aliceblue;
+    font-family:'Courier New', Courier, monospace;
+    font-size:1em;
+}
+
+.gold{
+    color:gold;
+}
+.green{
+    color:green;
+}
+.red{
+    color:red;
+}
+
+#title-wrapper{
+    border:white solid 2px;
+    text-align:center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-size 2em;
+}
