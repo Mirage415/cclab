@@ -25,6 +25,7 @@ let xEarth = 600
 let yEarth = 1300
 let w //variable to control the side of the creature
 function setup() {
+
   let canvas = createCanvas(800, 500);
   canvas.id("p5canvas")
   angleMode(DEGREES);
@@ -71,26 +72,37 @@ function draw() {
         cannon()
       } else if (frameCount > 600 && frameCount <= 650) {
         shipbody()//from here,you can not fire
-      } else if (frameCount > 650) {
-        
-        text('YOU FAILED', width / 2, height / 2)
-      }
-
+      } 
     } else {
-      shipbody()
+      if(frameCount<=600){
+        shipbody()
       cannon()
       wings()
       otherparts()
     }
    
-      firing()
+      
     
+  }
+  if(keyIsPressed&&frameCount<=600){
+    firing()
   }
   if(keyCode==BACKSPACE){
   scanning()}
   pop()
 }
-
+if(frameCount>670){
+  drawEarth()
+  if (frameCount > 650) {
+    textSize(30)
+    textAlign(CENTER)
+    fill('red')
+    text('YOU FOUGHT BRAVELY, BUT YOUR WORLD IS ALREADY MINE', width / 2, height /2,400,200)
+    drawEarth()
+  }
+  
+}
+}
 
 
 
@@ -426,16 +438,31 @@ function enemy() {
       }
 
 
+      
       if (frameCount >= 300) {
+        
+  
         stroke(colRed_1);
         if (frameCount < 700) {
           strokeWeight(15);
           line(mouseX, mouseY, 400, 185);
+          a=sin(frameCount*30)*3000+height/2
+          b=cos(frameCount*30)*3000+width/2
+          line(a,b,400,185)
+          strokeWeight(4);
+          stroke(255);
+          line(a,b,400,185)
+          
+          for(let p;p>=0&&p<=100;p=random(0,100)){
+          line(p,p,400,185)
+          }
           strokeWeight(4);
           stroke(255);
           line(mouseX, mouseY, 400, 185);
+          // for(let p;p>=0&&p<=100;p=random(0,100)){
+          //   line(p,p,400,185)
           explosion_particles()
-        } else {
+      } else {
           stroke(colRed_1)
           strokeWeight(25)
           line(400, 185, 350, 700)
@@ -443,12 +470,13 @@ function enemy() {
           strokeWeight(9)
           line(400, 185, 350, 700)
         }
+      }
 
         pop();
       }
     }
   }
-}
+
 function friendly() {
   background(colBlue_1)
   text('MISSION COMPLETE', width / 2, height / 2)
