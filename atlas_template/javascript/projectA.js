@@ -8,6 +8,10 @@ let colGrey = "#807c7c"; //color for some small parts
 let colSpaceRed = "#4f0f0f";
 let colOrange = "#d93e18"; //color for laser
 let colBlue_3 = '#05f1f5'//color for scanning laser
+let matrixbrown = '#8a705a'
+let matrixblue = '#0af1f5'
+let matrixsilver = '#bab8b8'
+let laserblue = '#0cfae6'
 let x = 0;
 let y = 0;
 let deltaX = 0.15;
@@ -24,6 +28,8 @@ let maxParticles = 100; // Maximum number of particles on the screen
 let xEarth = 600
 let yEarth = 1300
 let w //variable to control the side of the creature
+let Xx=0
+
 function setup() {
 
   let canvas = createCanvas(800, 500);
@@ -92,13 +98,27 @@ function draw() {
   pop()
 }
 if(frameCount>670){
-  drawEarth()
-  if (frameCount > 650) {
+ 
+  if (frameCount > 650&&frameCount<=750) {
     textSize(30)
     textAlign(CENTER)
     fill('red')
     text('YOU FOUGHT BRAVELY, BUT YOUR WORLD IS ALREADY MINE', width / 2, height /2,400,200)
-    drawEarth()
+    
+  }if(frameCount > 700){
+  save_the_planet()
+  }if(frameCount>=800){
+  push()
+  fill(255)
+  noStroke()
+  ellipse(400,185,15*Xx,15*Xx)
+  pop()
+  save_the_planet()
+  
+  }if(frameCount>=950){
+    background(255)
+    textSize(30)
+    text('You Saved The Planet!',width/2,height/2)
   }
   
 }
@@ -502,4 +522,82 @@ function firing(){
     }
     
   }
+}
+function save_the_planet(){
+  
+
+  //matrix laser
+  matrix_of_leadership()
+  push()
+//  let strokeweight 
+//  strokeweight++
+ Xx+=Math.abs(deltaX)
+ 
+  if(frameCount>=800){
+  stroke(laserblue)
+  strokeWeight(30+Xx)
+  line(mouseX-5,mouseY-5,400,185)
+  stroke(255)
+  strokeWeight(15+Xx)
+  line(mouseX-5,mouseY-5,400,185)
+  pop()
+  push()
+  strokeWeight(3000)
+  textAlign(CENTER)
+  textSize(16)
+  text('Light our darkest hour!!',mouseX,mouseY+50)
+  
+}
+      pop()
+  
+  
+ 
+}
+function matrix_of_leadership(){
+  
+   //main part
+  fill(matrixsilver);
+  circle(mouseX,mouseY,28);
+//
+  fill(matrixbrown)
+  beginShape()
+  vertex(mouseX-8,mouseY-10);
+  vertex(mouseX-28,mouseY-4);
+  vertex(mouseX-28,mouseY+4);
+  vertex(mouseX-8,mouseY+10);
+  endShape()
+  
+  beginShape()
+  vertex(mouseX+8,mouseY-10);
+  vertex(mouseX+28,mouseY-4);
+  vertex(mouseX+28,mouseY+4);
+  vertex(mouseX+8,mouseY+10);
+  endShape()
+  fill(colSpaceRed)
+  beginShape()
+  vertex(mouseX+5,mouseY-7);
+  vertex(mouseX+25,mouseY-1);
+  vertex(mouseX+25,mouseY+1);
+  vertex(mouseX+5,mouseY+7);
+  endShape();
+
+  beginShape();
+  vertex(mouseX-5,mouseY+7);
+  vertex(mouseX-25,mouseY+1);
+  vertex(mouseX-25,mouseY-1);
+  vertex(mouseX-5,mouseY-7);
+  endShape();
+  
+  
+
+  //core
+  fill(matrixblue);
+  beginShape();
+  vertex(mouseX,mouseY-10);
+  vertex(mouseX-8,mouseY);
+  vertex(mouseX,mouseY+10);
+  vertex(mouseX+8,mouseY);
+  endShape();
+ 
+ 
 }
