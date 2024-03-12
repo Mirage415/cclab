@@ -105,33 +105,41 @@ if(frameCount>670){
     fill('red')
     text('YOU FOUGHT BRAVELY, BUT YOUR WORLD IS ALREADY MINE', width / 2, height /2,400,200)
     
-  }if(frameCount > 700){
+  }if(frameCount > 700&&keyCode == CONTROL){
   save_the_planet()
-  }if(frameCount>=800){
+  }if(frameCount>=800&&keyCode == CONTROL){
   push()
   fill(255)
   noStroke()
   ellipse(400,185,15*Xx,15*Xx)
   save_the_planet()
   pop()
-    if(keyCode == ALT){
+    if(keyCode == CONTROL){
       save_the_planet()
     }else{
       drawEarth()
       if(frameCount>=950){
-        
+        text('YOU LOST THE PLANET',width/2,height/2)
       }
     }
   
   
-  }if(frameCount>=950){
+  }if(frameCount>=950&&keyCode == CONTROL){
    
     background(colBlue_1)
     textSize(30)
     text('You Saved The Planet!',width/2,height/2)
   
-
-  }
+   
+  }else if(frameCount>=950&&keyCode != CONTROL){
+    drawEarth()
+    if(frameCount>=950){
+      background(colRed_2)
+      push()
+      translate(0,0)
+      pop()
+      text('YOU LOST THE PLANET',width/2,height/2)
+    }
 }
 }
 
@@ -612,4 +620,5 @@ function matrix_of_leadership(){
   endShape();
  
  
+}
 }
