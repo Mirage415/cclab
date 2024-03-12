@@ -112,17 +112,29 @@ if(frameCount>670){
   fill(255)
   noStroke()
   ellipse(400,185,15*Xx,15*Xx)
-  pop()
   save_the_planet()
+  pop()
+    if(keyCode == ALT){
+      save_the_planet()
+    }else{
+      drawEarth()
+      if(frameCount>=950){
+        
+      }
+    }
+  
   
   }if(frameCount>=950){
-    background(255)
+   
+    background(colBlue_1)
     textSize(30)
     text('You Saved The Planet!',width/2,height/2)
-  }
   
+
+  }
 }
 }
+
 
 
 
