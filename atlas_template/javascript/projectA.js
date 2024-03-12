@@ -33,12 +33,13 @@ let Xx=0
 function setup() {
 
   let canvas = createCanvas(800, 500);
-  canvas.id("p5canvas")
+  canvas.id("p5canvas");
+  canvas.parent("canvas_container")
   angleMode(DEGREES);
   w = random(1, 5)
 }
 function draw() {
-
+frameCount=0
   x += deltaX;
   y += deltaY;
   if (x >= 10 || x <= -10) {
@@ -128,8 +129,10 @@ if(frameCount>670){
    
     background(colBlue_1)
     textSize(30)
+    push()
+    translate(0,0)
     text('You Saved The Planet!',width/2,height/2)
-  
+  pop()
    
   }else if(frameCount>=950&&keyCode != CONTROL){
     drawEarth()
