@@ -41,15 +41,15 @@ function setup() {
 }
 function draw() {
  
-  if(frameCount<=100){
-    // push()
-    // translate(100,100)
-    textAlign(CENTER)
-    fill('white')
-    textSize(1)
-    text('constantly Press enter to continue',width/2,height/2)
-    // pop()
-  }
+  // if(frameCount<=100){
+  //   // push()
+  //   // translate(100,100)
+  //   textAlign(CENTER)
+  //   fill('white')
+  //   textSize(1)
+  //   text('constantly Press enter to continue',width/2,height/2)
+  //   // pop()
+  // }
   // frameRate(60)
   earthY-=
 
