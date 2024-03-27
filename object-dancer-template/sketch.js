@@ -26,10 +26,15 @@ function draw() {
   // you don't need to make any adjustments inside the draw loop
   background(0);
   drawFloor(); // for reference only
-
+  
   dancer.update();
+  
   dancer.display();
+  
+  
   dancer.transform()
+
+ 
   
 }
 
@@ -91,6 +96,7 @@ class EricDancer {
     // you may change its position on line 19 to see the effect.
     push();
     translate(this.x, this.y);
+    scale(1.9)
 
     // ******** //
     // ⬇️ draw your dancer from here ⬇️
