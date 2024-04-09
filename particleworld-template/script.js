@@ -41,7 +41,7 @@ class Particle {
   }
   // methods
   fall() {
-    this.ySpd += 0.1;
+    this.ySpd += 1;
   }
   bounce() {
     if (this.x < 0) {
