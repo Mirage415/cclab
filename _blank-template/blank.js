@@ -46,3 +46,7 @@ class Ball {
         }
     }
 }
+
+// 在class中，用random定义速度，在Ball中， x += xSpd, y += ySpd
+//diameter random
+// 用array+for循环组合，用if statement决定什么时候splice第一个

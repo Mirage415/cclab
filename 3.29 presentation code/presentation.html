@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Net.Flag Mock Program</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        #flagCanvas {
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Net.Flag Mock Program</h1>
+    <textarea id="codeInput" rows="4" cols="50" placeholder="Enter flag design code here..."></textarea>
+    <button onclick="renderFlag()">Render Flag</button>
+    <hr>
+
+    <script>
+        function setup() {
+            let canvas = createCanvas(400, 200); 
+            canvas.id('flagCanvas'); 
+            rectMode(CENTER);
+        }
+
+        function renderFlag() {
+            let code = document.getElementById("codeInput").value.trim();
+            let commands = code.split("\n");
+
+            for (let i = 0; i < commands.length; i++) {
+                let parts = commands[i].split(" ");
+                let command = parts[0];
+                let params = parts.slice(1); //slice(t) ➡️ everything after t but not including t
+
+                if (command === "rectangle") {
+                    drawRectangle(params);
+                } else if (command === "circle") {
+                    drawCircle(params);
+                }
+            }
+        }
+
+        function drawRectangle(params) {
+            let x = parseInt(params[0]); //parseInt is similar to int()
+            let y = parseInt(params[1]);
+            let width = parseInt(params[2]);
+            let height = parseInt(params[3]);
+            let color = params[4];
+            fill(color);
+            rect(x, y, width, height);
+        }
+
+        function drawCircle(params) {
+            let x = parseInt(params[0]);
+            let y = parseInt(params[1]);
+            let radius = parseInt(params[2]);
+            let color = params[3];
+            fill(color);
+            ellipse(x, y, radius * 2, radius * 2);
+        }
+    </script>
+</body>
+</html>
