@@ -1,0 +1,36 @@
+#box1{
+    background-color: blanchedalmond;
+    width: 300px;
+    height: 200px;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    padding-left: 20px;
+    padding-top: 50px;
+    margin-right: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: brown;
+    
+}
+
+#box2{
+    background-color: aliceblue;
+    width: 200px;
+    height: 150px;
+    border: solid black 2px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+#box3{
+    background-color: tomato;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    
+}

@@ -1,0 +1,76 @@
+
+
+ #myCanvas{
+    position:relative;
+    border: solid black 1px;
+    width :800px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    overflow:hidden;
+    /* z-index: 2; */
+}
+#mission_window{
+    /* display: block; */
+    position:relative;
+    background-image: url("/resources/任务对话框.png");
+    background-position: center;
+    background-size: 500px 500px;
+    border: solid black 1px;
+    width : 500px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 200px;
+    /* z-index: 2; */
+    /* overflow:hidden; */
+    
+    
+} 
+
+#mission_line1{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:aquamarine;
+    margin-top: 50px;
+}
+
+#mission_line2{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:aquamarine;
+    margin-top: 20px;
+}
+.main{
+    background-image: url("/resources/autobot_align.jpeg");
+    background-position:center;
+    width: 100vw;
+    height: 100vh;
+    /* z-index: 1; */
+}
+.tech{
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    position:absolute;
+    background-image: url("/resources/科技背景.png");
+    /* background-color: azure; */
+    width: 100vw;
+    height:100vw;
+    /* z-index: 3; */
+    /* margin-bottom: auto;
+     margin-left: auto;  */
+
+}
+.tech2{
+    background-image: url("/resources/bg.png");
+    margin-left: 0px;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* z-index: 4; */
+    width: 200px;
+    height: 100px;
+}
