@@ -15,7 +15,7 @@
 #mission_window{
     /* display: block; */
     position:relative;
-    background-image: url("/resources/任务对话框.png");
+    background-image: url("../resources/任务对话框.png");
     background-position: center;
     background-size: 500px 500px;
     border: solid black 1px;
@@ -44,7 +44,7 @@
     margin-top: 20px;
 }
 .main{
-    background-image: url("/resources/autobot_align.jpeg");
+    background-image: url("../resources/autobot_align.jpeg");
     background-position:center;
     width: 100vw;
     height: 100vh;
@@ -55,7 +55,7 @@
     margin-left: auto;
     margin-right: auto;
     position:absolute;
-    background-image: url("/resources/科技背景.png");
+    background-image: url("../resources/科技背景.png");
     /* background-color: azure; */
     width: 100vw;
     height:100vw;
@@ -65,7 +65,7 @@
 
 }
 .tech2{
-    background-image: url("/resources/bg.png");
+    background-image: url("../resources/bg.png");
     margin-left: 0px;
     margin-right: auto;
     margin-top: auto;
