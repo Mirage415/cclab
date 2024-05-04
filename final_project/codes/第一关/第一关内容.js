@@ -31,7 +31,7 @@ function draw() {
             if (!button) {
                 button = createButton("PROCEED");
                 button.position(width / 2, height * 3 / 4);
-                button.mousePressed(close_page);
+                button.mousePressed(moveOn);
                 button.style('background-color', '#111a30');
                 button.style('color', '#a3a5a8');
                 button.style('font-size', '20px');
@@ -107,5 +107,5 @@ function displayText() {
     text(`You have saved ${found.length} trapped citizens！`, width / 2, height / 2);
 }
 function moveOn(){
-    window.location.href = ""
+    window.location.href = "https://mirage415.github.io/cclab/final_project/codes/%E7%AC%AC%E4%BA%8C%E5%85%B3.html"
 }

@@ -949,10 +949,10 @@ class 血条 {
   }
 }
 function win(){
-  // let time = 0
-  // time ++
+  let time = 0
+  time ++
  image(explosion,300,-400,900,900)
- if (time > 100){
+ if (time > 50){
   finalBgm.stop()
   fill(0)
   rect(width/2,height/2,windowWidth,windowHeight) 
