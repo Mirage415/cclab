@@ -10,6 +10,7 @@ function preload() {
     mission1 = loadSound("/resources/任务1.mp3");
     prime1 = loadImage("/resources/optimus1.png");
     nametag = loadImage("/resources/namecard.png")
+    bg = loadImage("/resources/Optimus_bg.jpeg")
 }
 
 function setup() {
@@ -19,7 +20,14 @@ function setup() {
 }
 
 function draw() {
-   background(0)
+//    background(CLEAR);
+// imageMode(CORNER);
+push ()
+imageMode(CORNER)
+    background(bg);
+pop ()
+
+//    image(bg,0,0,windowWidth,windowHeight);
    if (frameCount < 400){
     擎天柱变形();
    }
@@ -34,6 +42,7 @@ function draw() {
 }
 
 function 擎天柱变形() {
+    imageMode(CENTER);
     image(Optimus_transform, width / 2, height / 2, width/2 , height/2 );
     if (!transform_sound.isPlaying()) {
         transform_sound.play();

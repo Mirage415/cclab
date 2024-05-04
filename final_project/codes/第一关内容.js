@@ -16,7 +16,7 @@ function setup() {
     canvas_3.parent('myCanvas');
     generateCoordinates();
     textFont('Arial');
-}
+} 
 
 function draw() {
     background(0);
