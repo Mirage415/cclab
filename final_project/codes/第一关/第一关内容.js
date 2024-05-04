@@ -4,7 +4,7 @@ let found = [];
 let x0 = [];
 let y0 = [];
 let numCircles = 10;
-
+let button
 function preload() {
     iacon = loadImage("../resources/iacon.jpeg");
     prime = loadSound("../resources/goodwork.mp3")
