@@ -1,5 +1,6 @@
 let background_music;
-let background_photo;
+let background_photo_1;
+let background_photo_2
 let button;
 let alphaValue = 255;
 let x = 1
@@ -40,7 +41,7 @@ function draw() {
         image(rollout,  width / 2, height / 2 + 20, width, height)
     }else if (frameCount > 1300 && frameCount <= 1500){
         image(cons,width / 2, height / 2 + 20, width, height)
-    }else if (frameCount > 1500 && frameCount <= 1800){
+    }else if (frameCount > 1500 && frameCount <= 1700){
         image(megatron,width / 2, height / 2 + 20, width, height)
     }
    
@@ -83,6 +84,7 @@ function mousePressed() {
 function close_page() {
     alphaValue = 0;
     x += 1
+    // window.location.href = "另一个HTML文件的URL"
 
 }
 
