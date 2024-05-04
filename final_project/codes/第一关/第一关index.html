@@ -12,7 +12,54 @@
 </head>
 
 <body>
-    <script src="第一关.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative; /* 让视频容器作为参考 */
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+        .custom-button {
+            position: absolute; 
+            top: calc(50% + 250px); 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            background: linear-gradient(to right, #bdc3c7, #2c3e50); 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px; 
+            z-index: 1; 
+        }
+    </style>
+    <video controls>
+        <source src="/resources/第一关.mp4" type="video/mp4">
+    </video>
+    <button id="myButton" class="custom-button">Proceed</button>
+
+<script>
+    // 获取按钮元素
+    let button = document.getElementById('myButton');
+
+    // 添加点击事件
+    button.addEventListener('click', function() {
+        // 在点击时导航到另一个链接
+        window.location.href = 'https://mirage415.github.io/cclab/final_project/codes/%E7%AC%AC%E4%B8%80%E5%85%B3%E5%86%85%E5%AE%B9.html'; 
+    });
+</script>
 </body>
 
 </html>
