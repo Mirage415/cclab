@@ -28,15 +28,10 @@ function draw() {
     if (numCircles == 0) {
         if (!prime.isPlaying()) {
             prime.play()
-            if (!button) {
-                button = createButton("PROCEED");
-                button.position(width / 2, height * 3 / 4);
-                button.mousePressed(moveOn);
-                button.style('background-color', '#111a30');
-                button.style('color', '#a3a5a8');
-                button.style('font-size', '20px');
-            }
+            
         }
+        window.location.href = "https://mirage415.github.io/cclab/final_project/codes/%E7%AC%AC%E4%BA%8C%E5%85%B3.html"
+
     }
 }
 
