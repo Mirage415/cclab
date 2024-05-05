@@ -4,12 +4,12 @@ let found = [];
 let x0 = [];
 let y0 = [];
 let numCircles = 10;
-let proceedButton;
 
 function preload() {
-    iacon = loadImage("../resources/iacon.jpeg");
-    prime = loadSound("../resources/goodwork.mp3")
+    iacon = loadImage("/resources/iacon.jpeg");
+    prime = loadSound("/resources/goodwork.mp3")
 }
+
 
 function setup() {
     let canvas_3 = createCanvas(1100, 950);
@@ -33,7 +33,7 @@ function draw() {
         if (!prime.isPlaying()) {
             prime.play();
         }
-        checkAndNavigate(); // 检查是否需要进行页面跳转
+        // checkAndNavigate(); // 检查是否需要进行页面跳转
     }
 }
 
