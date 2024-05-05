@@ -4,7 +4,8 @@ let found = [];
 let x0 = [];
 let y0 = [];
 let numCircles = 10;
-let button
+let hasJumped = false; // 标志变量，表示是否已经进行了页面跳转
+
 function preload() {
     iacon = loadImage("../resources/iacon.jpeg");
     prime = loadSound("../resources/goodwork.mp3")
@@ -25,13 +26,14 @@ function draw() {
     drawCircles();
     displayText();
 
-    if (numCircles == 0) {
+    if (numCircles == 0 && !hasJumped) { // 如果还未进行页面跳转
         if (!prime.isPlaying()) {
-            prime.play()
-            
+            prime.play();
         }
-        window.location.href = "https://mirage415.github.io/cclab/final_project/codes/%E7%AC%AC%E4%BA%8C%E5%85%B3.html"
-
+        // 标记已经进行了页面跳转
+        hasJumped = true;
+        // 在条件满足时跳转到下一个页面
+        window.location.href = "https://mirage415.github.io/cclab/final_project/codes/%E7%AC%AC%E4%BA%8C%E5%85%B3.html";
     }
 }
 
@@ -50,7 +52,6 @@ function drawCircles() {
         let iy = y0[i] + y1;
         circle (ix,iy,6)
     }
-
 }
 
 function mousePressed() {
@@ -59,7 +60,6 @@ function mousePressed() {
         if (d < 3) {
             found_injuries(i);
             displayText()
-
         }
     }
 }
@@ -68,8 +68,6 @@ function found_injuries(index) {
     found.push("1");
     x0.splice(index, 1);
     y0.splice(index, 1);
-
-
     numCircles = x0.length;
 }
 
@@ -84,6 +82,7 @@ function vision_movement() {
         y1 += 0;
     }
 }
+
 function keyPressed() {
     if (keyCode === LEFT_ARROW) {
         x1 += 10;
@@ -95,12 +94,10 @@ function keyPressed() {
         y1 -= 10;
     }
 }
+
 function displayText() {
     fill(255);
     textSize(20);
     textAlign(CENTER, CENTER);
     text(`You have saved ${found.length} trapped citizens！`, width / 2, height / 2);
-}
-function moveOn(){
-    window.location.href = "https://mirage415.github.io/cclab/final_project/codes/%E7%AC%AC%E4%BA%8C%E5%85%B3.html"
 }
