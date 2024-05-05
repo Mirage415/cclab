@@ -6,16 +6,16 @@ let alphaValue = 255;
 let x = 1
 
 function preload() {
-    background_music = loadSound("../resources/arrival_to_earth初始页面.mp3");
-    background_photo_1 = loadImage("../resources/塞伯坦背景图.avif");
-    background_photo_2 = loadImage("../resources/cybertron1.avif")
+    background_music = loadSound("/resources/arrival_to_earth初始页面.mp3");
+    background_photo_1 = loadImage("/resources/塞伯坦背景图.avif");
+    background_photo_2 = loadImage("/resources/cybertron1.avif")
     // background_photo_3 = loadImage("/resources/")
-    Optimus_monologue = loadSound("../resources/旁白.mp3");
+    Optimus_monologue = loadSound("/resources/旁白.mp3");
    
-    fight_1 = loadImage("../resources/gif1.gif")
-    rollout = loadImage("../resources/rollout.gif")
-    cons = loadImage("../resources/decepticons.gif")
-    megatron = loadImage("../resources/megatron.gif")
+    fight_1 = loadImage("/resources/gif1.gif")
+    rollout = loadImage("/resources/rollout.gif")
+    cons = loadImage("/resources/decepticons.gif")
+    megatron = loadImage("/resources/megatron.gif")
     
 }
 
@@ -84,7 +84,7 @@ function mousePressed() {
 function close_page() {
     alphaValue = 0;
     x += 1
-    // window.location.href = "另一个HTML文件的URL"
+    window.location.href = ""
 
 }
 
