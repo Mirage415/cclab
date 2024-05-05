@@ -4,7 +4,6 @@ let found = [];
 let x0 = [];
 let y0 = [];
 let numCircles = 10;
-let hasJumped = false; // 标志变量，表示是否已经进行了页面跳转
 
 function preload() {
     iacon = loadImage("../resources/iacon.jpeg");
@@ -12,7 +11,6 @@ function preload() {
 }
 
 function setup() {
-    // Create a canvas
     let canvas_3 = createCanvas(1100, 950);
     canvas_3.parent('myCanvas');
     generateCoordinates();
@@ -24,16 +22,13 @@ function draw() {
     vision_movement();
     image(iacon, 0 + x1, y1, width, height);
     drawCircles();
-    displayText();
+    // displayText();
 
-    if (numCircles == 0 && !hasJumped) { // 如果还未进行页面跳转
+    if (numCircles == 0) {
         if (!prime.isPlaying()) {
             prime.play();
         }
-        // 标记已经进行了页面跳转
-        hasJumped = true;
-        // 在条件满足时跳转到下一个页面
-        window.location.href = "https://mirage415.github.io/cclab/final_project/codes/%E7%AC%AC%E4%BA%8C%E5%85%B3.html";
+        checkAndNavigate(); // 检查是否需要进行页面跳转
     }
 }
 
@@ -100,4 +95,37 @@ function displayText() {
     textSize(20);
     textAlign(CENTER, CENTER);
     text(`You have saved ${found.length} trapped citizens！`, width / 2, height / 2);
+}
+
+function checkAndNavigate() {
+    if (prime === null) {
+        console.error("[checkAndNavigate] prime is null");
+        return;
+    }
+    if (!prime.hasOwnProperty("isPlaying")) {
+        console.error("[checkAndNavigate] prime.isPlaying is null");
+        return;
+    }
+    if (prime.isPlaying() === null) {
+        console.error("[checkAndNavigate] prime.isPlaying() is null");
+        return;
+    }
+    if (!prime.isPlaying()) {
+        prime.play();
+    }
+    setTimeout(() => {
+        if (window === null) {
+            console.error("[checkAndNavigate] window is null");
+            return;
+        }
+        if (!window.hasOwnProperty("location")) {
+            console.error("[checkAndNavigate] window.location is null");
+            return;
+        }
+        if (!window.location.hasOwnProperty("href")) {
+            console.error("[checkAndNavigate] window.location.href is null");
+            return;
+        }
+        window.location.href = "https://mirage415.github.io/cclab/final_project/codes/%E7%AC%AC%E4%BA%8C%E5%85%B3.html";
+    }, 1000); // 等待1秒后执行页面跳转
 }
