@@ -4,6 +4,7 @@ let found = [];
 let x0 = [];
 let y0 = [];
 let numCircles = 10;
+let proceedButton;
 
 function preload() {
     iacon = loadImage("../resources/iacon.jpeg");
@@ -15,6 +16,11 @@ function setup() {
     canvas_3.parent('myCanvas');
     generateCoordinates();
     textFont('Arial');
+
+    // 创建按钮
+    proceedButton = createButton('PROCEED');
+    proceedButton.position(width / 2 - 50, height - 50);
+    proceedButton.mousePressed(redirectToNextPage);
 } 
 
 function draw() {
@@ -22,7 +28,6 @@ function draw() {
     vision_movement();
     image(iacon, 0 + x1, y1, width, height);
     drawCircles();
-    // displayText();
 
     if (numCircles == 0) {
         if (!prime.isPlaying()) {
@@ -128,4 +133,8 @@ function checkAndNavigate() {
         }
         window.location.href = "https://mirage415.github.io/cclab/final_project/codes/%E7%AC%AC%E4%BA%8C%E5%85%B3.html";
     }, 1000); // 等待1秒后执行页面跳转
+}
+
+function redirectToNextPage() {
+    window.location.href = "https://mirage415.github.io/cclab/final_project/codes/%E7%AC%AC%E4%BA%8C%E5%85%B3.html";
 }
