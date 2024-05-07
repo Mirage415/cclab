@@ -753,7 +753,7 @@ class Player {
   }
   decreaseHp() {
     if (this.current > 0) {
-      this.current -= 10; // 每次减1
+      this.current -= 2; // 每次减2
     }
   }
   displayhp() {
@@ -875,7 +875,7 @@ class Megatron {
   }
   shoot() {
     if(player.current > 1){
-      if (sin(frameCount) > 5.96 / 8) {
+      if (sin(frameCount) > 5.959 / 8) {
         this.shoot_ = true;
       } else {
         this.shoot_ = false;
@@ -949,12 +949,12 @@ class 血条 {
   }
 }
 function win(){
-  let time = 0
-  time ++
+  
  image(explosion,300,-400,900,900)
- if (time > 50){
+
   finalBgm.stop()
-  fill(0)
+  for(let a; a < 255; a += 5){
+  fill(0,0,0,a)
   rect(width/2,height/2,windowWidth,windowHeight) 
  }
 }
