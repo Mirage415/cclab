@@ -84,7 +84,7 @@ function mousePressed() {
 function close_page() {
     alphaValue = 0;
     x += 1
-    window.location.href = ""
+    window.location.href = "https://mirage415.github.io/cclab/final_project/codes/%E7%AC%AC%E4%B8%80%E5%85%B3index.html"
 
 }
 
