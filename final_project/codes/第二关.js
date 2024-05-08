@@ -43,7 +43,7 @@ function preload() {
   energyExplosion = loadImage("../resources/energyExplosion.png");
   megatronCannon = loadSound("../resources/megatronCannon.mp3");
   engineSound = loadSound("../resources/engine.mp3");
- 
+
   // rocketSound =
 }
 function setup() {
@@ -158,9 +158,9 @@ function draw() {
   //   megatronCannon.play();
   // }
   // player.detectExplosion(megatron_.fireX, megatron_.fireY); // 假设 explosion 的位置由 megatron 的火炮控制
-if(player.current <= 1){
-  win()
-}
+  if (player.current <= 1) {
+    win();
+  }
 }
 
 class Player {
@@ -759,14 +759,14 @@ class Player {
   displayhp() {
     // 绘制背景
     fill(255); // 白色
-    rect(width/2, 200, 200, 20);
+    rect(width / 2, 200, 200, 20);
 
     // 计算红色部分的宽度
     let healthWidth = map(this.current, 0, this.total, 0, 200);
 
     // 绘制红色部分
     fill(255, 0, 0); // 红色
-    rect(width/2, 200, healthWidth, 20);
+    rect(width / 2, 200, healthWidth, 20);
   }
 
   detectExplosion() {
@@ -874,8 +874,8 @@ class Megatron {
     image(megatron, this.x - 400, this.y, 900, 800);
   }
   shoot() {
-    if(player.current > 1){
-      if (sin(frameCount) > 5.959 / 8) {
+    if (player.current > 1) {
+      if (sin(frameCount) > 5.96 / 8) {
         this.shoot_ = true;
       } else {
         this.shoot_ = false;
@@ -895,11 +895,11 @@ class Megatron {
         if (this.fireY >= windowHeight) {
           this.fireY = this.y;
         }
-  
+        
+
         //sound
       }
     }
-    
   }
 }
 class 血条 {
@@ -924,11 +924,12 @@ class 血条 {
 
   // 碰撞检测
   checkCollision() {
-    if (mouseIsPressed&&player.x >= megatron_.x - 500 && player.x <= megatron_.x - 300) {
-     
-        this.decreaseHealth();
-       
-      
+    if (
+      mouseIsPressed &&
+      player.x >= megatron_.x - 500 &&
+      player.x <= megatron_.x - 300
+    ) {
+      this.decreaseHealth();
     } else {
       this.decreaseNothing();
     }
@@ -948,13 +949,12 @@ class 血条 {
     rect(this.x, this.y, healthWidth, this.height);
   }
 }
-function win(){
-  
- image(explosion,300,-400,900,900)
+function win() {
+  image(explosion, 300, -400, 900, 900);
 
-  finalBgm.stop()
-  for(let a; a < 255; a += 5){
-  fill(0,0,0,a)
-  rect(width/2,height/2,windowWidth,windowHeight) 
- }
+  finalBgm.stop();
+  for (let a; a < 255; a += 5) {
+    fill(0, 0, 0, a);
+    rect(width / 2, height / 2, windowWidth, windowHeight);
+  }
 }
