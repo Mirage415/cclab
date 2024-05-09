@@ -5,12 +5,12 @@ let prime1;
 let 台词
 
 function preload() {
-    Optimus_transform = loadImage("/resources/擎天柱变形.GIF");
-    transform_sound = loadSound("/resources/变形音效.mp3");
-    mission1 = loadSound("/resources/任务1.mp3");
-    prime1 = loadImage("/resources/optimus1.png");
-    nametag = loadImage("/resources/namecard.png")
-    bg = loadImage("/resources/Optimus_bg.jpeg")
+    Optimus_transform = loadImage("../resources/擎天柱变形.GIF");
+    transform_sound = loadSound("../resources/变形音效.mp3");
+    mission1 = loadSound("../resources/任务1.mp3");
+    prime1 = loadImage("../resources/optimus1.png");
+    nametag = loadImage("../resources/namecard.png")
+    bg = loadImage("../resources/Optimus_bg.jpeg")
 }
 
 function setup() {
