@@ -30,19 +30,19 @@ let megatron_damage = [];
 let hp;
 
 function preload() {
-  firing = loadImage("/resources/炮弹1.png");
-  firingSound = loadSound("/resources/firing_sound.mp3");
-  rocket = loadImage("/resources/飞炮火箭.png");
-  texture_metal = loadImage("/resources/金属材质.jpeg");
-  transforming = loadSound("/resources/transform_sound1.mp3");
-  explosion = loadImage("/resources/explosion_1.gif");
-  backgroundImage = loadImage("/resources/bgi.jpeg");
-  megatron = loadImage("/resources/megatron.png");
-  finalBgm = loadSound("/resources/finalBattle.mp3");
+  firing = loadImage("../resources/炮弹1.png");
+  firingSound = loadSound("../resources/firing_sound.mp3");
+  rocket = loadImage("../resources/飞炮火箭.png");
+  texture_metal = loadImage("../resources/金属材质.jpeg");
+  transforming = loadSound("../resources/transform_sound1.mp3");
+  explosion = loadImage("../resources/explosion_1.gif");
+  backgroundImage = loadImage("../resources/bgi.jpeg");
+  megatron = loadImage("../resources/megatron.png");
+  finalBgm = loadSound("../resources/finalBattle.mp3");
   // laser = loadImage("/resources/laser.png");
-  energyExplosion = loadImage("/resources/energyExplosion.png");
-  megatronCannon = loadSound("/resources/megatronCannon.mp3");
-  engineSound = loadSound("/resources/engine.mp3");
+  energyExplosion = loadImage("../resources/energyExplosion.png");
+  megatronCannon = loadSound("../resources/megatronCannon.mp3");
+  engineSound = loadSound("../resources/engine.mp3");
 
   // rocketSound =
 }
