@@ -903,8 +903,8 @@ class Megatron {
   }
 }
 class 血条 {
-  constructor(x, y, w, h) {
-    this.total = 10000; // 初始总血量
+  constructor(x, y, w, h) { //相当于python中的__init__()
+    this.total = 100; // 初始总血量
     this.current = this.total; // 当前血量等于总血量
     this.x = x; // x坐标
     this.y = y; // y坐标

@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Dancing Script', cursive;
+    background: black;
+}
+
+#greeting-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 450px;
+    min-height: 350px;
+    
+    /* 毛玻璃效果 */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px rgba(31, 38, 135, 0.37),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    
+    /* 只保留浮动动画，移除旋转 */
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+    50% { transform: translate(-50%, -50%) translateY(-10px); }
+}
+
+.card-content {
+    padding: 40px 30px;
+    text-align: center;
+    color: white;
+}
+
+#main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.message-container {
+    margin: 20px 0;
+}
+
+#display-message {
+    margin-top: 15px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 500px) {
+    #greeting-card {
+        width: 90%;
+        min-height: 300px;
+    }
+    
+    .card-content {
+        padding: 25px 20px;
+    }
+    
+    #main-title {
+        font-size: 2.5rem;
+    }
+    
+    #display-message {
+        font-size: 1.2rem;
+    }
+}
